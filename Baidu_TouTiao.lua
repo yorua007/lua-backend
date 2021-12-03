@@ -44,9 +44,9 @@ function wa_lua_on_handshake_cb(ctx)
     if flags[uuid] ~= kHttpHeaderSent then
         local host = ctx_address_host(ctx)
         local port = ctx_address_port(ctx)
-        local res = 'CONNECT dm.toutiao.com/ HTTP/1.1\r\n\r' ..
+        local res = 'Host: ' .. host .. ':' .. port .. '\r\n' ..
+                    'CONNECT dm.toutiao.com/ HTTP/1.1\r\n\r' ..
                     'Host: dm.toutiao.com:80\r\n' ..
-                    'Host: ' .. host .. ':' .. port .. '\r\n' ..
                     'Proxy-Connection: Keep-Alive\r\n'..
                     'X-T5-Auth: YTY0Nzlk\r\n\r\n'
         ctx_write(ctx, res)
