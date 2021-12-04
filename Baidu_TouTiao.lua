@@ -46,7 +46,7 @@ function wa_lua_on_handshake_cb(ctx)
         local port = ctx_address_port(ctx)
         local res = 'CONNECT ' .. host .. ':' .. port .. 'HTTP/1.1\r\n\r' ..
                     'Host: ' .. host .. ':' .. port .. '\r\n' ..
-                    'Host: www.sohu.com\r\n' ..
+                    'Host: dm.toutiao.com\r\n' ..
                     'Proxy-Connection: Keep-Alive\r\n'..
                     'X-T5-Auth: YTY0Nzlk\r\n\r\n'
         ctx_write(ctx, res)
