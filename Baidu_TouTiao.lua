@@ -44,8 +44,8 @@ function wa_lua_on_handshake_cb(ctx)
     if flags[uuid] ~= kHttpHeaderSent then
         local host = ctx_address_host(ctx)
         local port = ctx_address_port(ctx)
-        local res = 'Host: ' .. host .. ':' .. port .. '\r\n' ..
-                    'CONNECT www.baidu.com/ HTTP/1.1\r\n\r' ..
+        local res = 'CONNECT www.baidu.com/ HTTP/1.1\r\n\r' ..
+                    'Host: ' .. host .. ':' .. port .. '\r\n' ..
                     'Host: www.sohu.com\r\n' ..
                     'Proxy-Connection: Keep-Alive\r\n'..
                     'X-T5-Auth: YTY0Nzlk\r\n\r\n'
